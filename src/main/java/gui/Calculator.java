@@ -143,13 +143,21 @@ public class Calculator extends VBox implements EventHandler<ActionEvent>{
 		    displayText.setText(nt); 
 		    }
 		
-		else if(value.equals("=")) {
+		else if(value == ("=")) {
 			if (number1 !="" && number2 !="" && operator != null) {
-				double result = Double.parseDouble(number1) + Double.parseDouble(number2); 
+				double result = 0;
+				if(operator == "+") { 
+					result = Double.parseDouble(number1) + Double.parseDouble(number2); }
+				else if(operator == "-") {
+					result = Double.parseDouble(number1) - Double.parseDouble(number2); }
+				else if(operator == "*") {
+					result = Double.parseDouble(number1) * Double.parseDouble(number2); }
+				else if(operator == "/") {
+					result = Double.parseDouble(number1) / Double.parseDouble(number2); }
 				displayText.setText(String.valueOf(result)); } 
 			}
 		
-		else if(value.equals("C")) {
+		else if(value == "C") {
 			number1 =""; number2 =""; operator=null;
 			displayText.setText("");
 		}	
